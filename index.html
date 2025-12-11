@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Quiz App</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Quiz App - Start</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,113 +13,54 @@
             background-position: center;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #3C7A90;
-            padding: 10px 20px;
-            color: white;
-        }
-
-        .navbar img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 20px auto;
-            background: rgb(255, 255, 255);
-            padding: 20px;
+        .start-box {
+            margin-top: 150px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 10px #0003;
         }
 
-        #options div {
-            margin: 10px 0;
-        }
-
-        .option label {
-            cursor: pointer;
-        }
-
-        #nextBtn,
-        #prevBtn {
-            padding: 10px 20px;
-            margin: 10px;
+        .start-btn {
+            padding: 14px 30px;
+            font-size: 18px;
             border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        #nextBtn {
+            border-radius: 8px;
             background: #27ae60;
             color: white;
+            cursor: pointer;
         }
 
-        #prevBtn {
-            background: #e67e22;
-            color: white;
-        }
-
-        #nextBtn:disabled,
-        #prevBtn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        /* #progressBarContainer {
-            width: 100%;
-            height: 8px;
-            background: #ddd;
-            margin-top: 10px;
-        }
-
-        #progressBar {
-            height: 100%;
-            width: 0%;
-            background: #3498db;
-            transition: 0.4s;
-        } */
-
-        #timer {
-            font-weight: bold;
+        .start-btn:hover {
+            background: #219150;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="navbar">
-        <h2>Quiz App</h2>
-        <img id="profilePic" src="https://via.placeholder.com/40" alt="Profile">
-        <input type="file" id="uploadInput" style="display:none;">
+    <div class="start-box">
+        <h1>Welcome to Quiz App</h1>
+        <p>Click below to start the quiz in a popup window</p>
+        <button class="start-btn" onclick="openQuiz()">Start Quiz</button>
     </div>
 
-    <div class="container">
-        <!-- Progress Bar -->
-        <!-- <div id="progressBarContainer">
-        <div id="progressBar"></div>
-    </div> -->
-        <div style="text-align:center; margin:10px 0;">
-            <h3>Time Left: <span id="timer" style="color:#27ae60;">60</span> sec</h3>
-        </div>
+    <script>
+        function openQuiz() {
+            window.open(
+                "quiz.html",
+                "QuizWindow",
+                "width=500,height=700,left=400,top=50"
+            );
+        }
+    </script>
 
-        <h3 id="question"></h3>
-        <div id="options"></div>
-
-        <div style="text-align:center;">
-            <button id="prevBtn">Previous</button>
-            <button id="nextBtn">Next</button>
-        </div>
-    </div>
-
-    <script src="quiz1.js"></script>
 </body>
 
 </html>

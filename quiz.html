@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f4f7;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #3C7A90;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #options div {
+            margin: 10px 0;
+        }
+
+        .option label {
+            cursor: pointer;
+        }
+
+        #nextBtn,
+        #prevBtn {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        #nextBtn {
+            background: #27ae60;
+            color: white;
+        }
+
+        #prevBtn {
+            background: #e67e22;
+            color: white;
+        }
+
+        #nextBtn:disabled,
+        #prevBtn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #timer {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h2>Quiz App</h2>
+        <img id="profilePic" src="https://via.placeholder.com/40" alt="Profile">
+        <input type="file" id="uploadInput" style="display:none;">
+    </div>
+
+    <div class="container">
+        <div style="text-align:center; margin:10px 0;">
+            <h3>Time Left: <span id="timer">120</span> sec</h3>
+        </div>
+
+        <h3 id="question"></h3>
+        <div id="options"></div>
+
+        <div style="text-align:center;">
+            <button id="prevBtn">Previous</button>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+
+    <script src="quiz1.js"></script>
+</body>
+
+</html>
